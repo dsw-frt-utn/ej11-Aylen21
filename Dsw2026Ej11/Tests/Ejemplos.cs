@@ -170,5 +170,39 @@ internal class Ejemplos
     public static void EjemploLinq()
     {
 
+        CasoLinq casoLinq = new CasoLinq();
+        List<Libro> libros = Libro.CrearLista();
+        casoLinq.GetPrimero(libros);
+        Console.WriteLine();
+
+
+        casoLinq.GetUltimo(libros);
+        Console.WriteLine();
+
+
+        casoLinq.GetTotalPrecios(libros);
+        Console.WriteLine();
+
+        decimal promedio;
+        CasoLinq.GetPromedioPrecios(libros, out promedio);
+        Console.WriteLine();
+
+        casoLinq.GetListById(libros);
+        Console.WriteLine();
+
+        casoLinq.GetLibros(libros);
+        Console.WriteLine();
+
+        casoLinq.GetMayorPrecio(libros);
+        Console.WriteLine();
+
+
+        casoLinq.GetMenorPrecio(libros);
+        Console.WriteLine();
+
+        casoLinq.GetMayorPromedio(libros, promedio);
+        Console.WriteLine();
+
+        casoLinq.OrdenadosPorTitulo(libros);
     }
 }
