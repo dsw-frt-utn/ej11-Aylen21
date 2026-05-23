@@ -12,6 +12,10 @@ public class Libro
         Titulo = titulo;
         Precio = precio;
     }
+    public override string ToString()
+    {
+        return $"ID: {Id} - Titulo: {Titulo} - Precio: {Precio}";
+    }
 
     public static List<Libro> CrearLista()
     {
