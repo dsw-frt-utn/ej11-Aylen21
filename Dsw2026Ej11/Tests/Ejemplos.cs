@@ -15,6 +15,74 @@ internal class Ejemplos
     //Eliminar el primer elemento de la lista y listar por consola los alumnos
     public static void EjemploList()
     {
+        CasoList casoList = new CasoList();
+
+        casoList.AgregarAlumno(new Alumno(0, "Sofia", 8.5));
+        casoList.AgregarAlumno(new Alumno(1, "Lara", 7.8));
+        casoList.AgregarAlumno(new Alumno(2, "Aylen", 9.1));
+        Console.WriteLine("================LISTA DE ALUMNOS==============");
+
+        foreach (var alu in casoList.RetornarLista())
+        {
+            Console.WriteLine(alu);
+        }
+        Console.WriteLine("================Buscando alumno con nombre Lara==============");
+
+        if (casoList.BuscarAlumnoPorNombre("Lara") != null)
+        {
+
+            Console.WriteLine(casoList.BuscarAlumnoPorNombre("Lara"));
+
+        }
+        else {
+
+            Console.WriteLine("El alumno no existe");
+
+
+        }
+        Console.WriteLine("================Buscando alumno con nombre Jorge (Inexistente).............");
+
+        if (casoList.BuscarAlumnoPorNombre("Jorge") != null)
+        {
+
+            Console.WriteLine(casoList.BuscarAlumnoPorNombre("Jorge"));
+
+        }
+        else
+        {
+
+            Console.WriteLine("El alumno no existe");
+
+
+        }
+        Console.WriteLine("Eliminando alumno con nombre Lara.................");
+
+
+
+        Alumno? eliminado = casoList.BuscarAlumnoPorNombre("Lara");
+        if (eliminado != null)
+        {
+            casoList.EliminarAlumno(eliminado);
+            Console.WriteLine("Alumno eliminado");
+        }
+        else {
+
+            Console.WriteLine("El alumno no existe");
+        }
+        Console.WriteLine("===========Lista luego de eliminar a Lara:===============");
+        foreach (Alumno alumno in casoList.RetornarLista())
+        {
+            Console.WriteLine(alumno);
+        }
+
+        casoList.EliminarPorPosicion(0);
+        Console.WriteLine("===========Lista luego de eliminar el primer elemento ===============");
+        foreach (Alumno alumno in casoList.RetornarLista())
+        {
+            Console.WriteLine(alumno);
+        }
+
+
 
     }
 
